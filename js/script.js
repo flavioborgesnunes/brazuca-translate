@@ -7,7 +7,7 @@ $(document).ready(function(){
             headers: {
                 "accept-encoding": "application/gzip",
 		        "x-rapidapi-host": "google-translate1.p.rapidapi.com",
-		        "x-rapidapi-key": "ece77d6516msh087fed3413e7514p19d3ccjsnfe5cb3e6bd51"
+		        "x-rapidapi-key": ""
             }
         }).done( function(data){
             idiomas = data.data.languages
@@ -29,7 +29,7 @@ $(document).ready(function(){
 		"content-type": "application/x-www-form-urlencoded",
 		"accept-encoding": "application/gzip",
 		"x-rapidapi-host": "google-translate1.p.rapidapi.com",
-		"x-rapidapi-key": "ece77d6516msh087fed3413e7514p19d3ccjsnfe5cb3e6bd51"
+		"x-rapidapi-key": ""
 	},
 	"data": {
 		"source": idioma,
