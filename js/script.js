@@ -7,7 +7,7 @@ $(document).ready(function(){
             headers: {
                 "accept-encoding": "application/gzip",
 		        "x-rapidapi-host": "google-translate1.p.rapidapi.com",
-		        "x-rapidapi-key": "5d6c0ce980msh491bd586a6f34fcp1561adjsnd2493b085289"
+		        "x-rapidapi-key": "ece77d6516msh087fed3413e7514p19d3ccjsnfe5cb3e6bd51"
             }
         }).done( function(data){
             idiomas = data.data.languages
@@ -20,7 +20,25 @@ $(document).ready(function(){
         })
     }
     $("#texto-original").keypress(function (){
-            var textoOriginal =  $("#texto-original").val()
+        var textoOriginal =  $("#texto-original").val()
+        var idioma = $("idioma").val()
+        $.ajax({
+            "url": "https://google-translate1.p.rapidapi.com/language/translate/v2",
+	"method": "POST",
+	"headers": {
+		"content-type": "application/x-www-form-urlencoded",
+		"accept-encoding": "application/gzip",
+		"x-rapidapi-host": "google-translate1.p.rapidapi.com",
+		"x-rapidapi-key": "ece77d6516msh087fed3413e7514p19d3ccjsnfe5cb3e6bd51"
+	},
+	"data": {
+		"source": idioma,
+		"target": "pt",
+		"q": textoOriginal
+	}
+        }).done(function(data){
+            console.log(data)
+        })
     })
     pegarIdioma()
 })
